@@ -4,7 +4,7 @@
 
 <web-app>
 
-  <display-name>Final Porject</display-name>
+  <display-name>Grading API</display-name>
 
   <servlet>
     <servlet-name>MainServlet</servlet-name>

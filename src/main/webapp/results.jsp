@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" import="com.finalproject.servlet.Html" %>
 <!DOCTYPE html>
 <html>
 
@@ -190,10 +191,28 @@
 
     <!-- Subtitle -->
     <div class="flex-grow flex flex-col justify-center items-center fade-in" style="position: relative; z-index: 2;">
-        <h2 class="text-6xl font-bold text-white file-input-primary shadow-custom"
-            style="font-family: 'Sofia', Times, serif, sans-serif; font-style: italic;">
-           <%= request.getParameter("grade") %>
-        </h2>
+        <%
+            Object error = request.getAttribute("error");
+            boolean noGrade = Boolean.TRUE.equals(request.getAttribute("noGrade"));
+            Object grade = request.getAttribute("grade");
+        %>
+        <% if (error != null) { %>
+            <h2 class="text-4xl font-bold text-white file-input-primary shadow-custom"><%= Html.escape(error) %></h2>
+        <% } else if (noGrade) { %>
+            <h2 class="text-6xl font-bold text-white file-input-primary shadow-custom"
+                style="font-family: 'Sofia', Times, serif, sans-serif; font-style: italic;">No grade was found</h2>
+        <% } else if (grade == null) { %>
+            <h2 class="text-4xl font-bold text-white file-input-primary shadow-custom">Upload a test on the home page to see results.</h2>
+        <% } else { %>
+            <h2 class="text-6xl font-bold text-white file-input-primary shadow-custom"
+                style="font-family: 'Sofia', Times, serif, sans-serif; font-style: italic;"><%= Html.escape(grade) %></h2>
+            <table class="mt-8 shadow-custom">
+                <tr><th>Student name</th><td><%= Html.escape(request.getAttribute("name")) %></td></tr>
+                <tr><th>Course code</th><td><%= Html.escape(request.getAttribute("courseCode")) %></td></tr>
+                <tr><th>Topic</th><td><%= Html.escape(request.getAttribute("topic")) %></td></tr>
+            </table>
+        <% } %>
+        <a href="./" class="btn btn-primary mt-8">Grade another test</a>
     </div>
               
     <!-- Theme Button -->

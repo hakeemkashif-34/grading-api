@@ -220,7 +220,7 @@
                <li>Access the application by visiting http://localhost:8081/ in your web browser.</li>
                <p class="mb-4"></p>
                <b class="mb-4">2. Uploading a File</b>
-               <li>On the web page at http://localhost:8080/WebApp/index.jsp, locate the file upload section.</li>
+               <li>On the web page at http://localhost:8081/, locate the file upload section.</li>
                <li>Select the document or clear photo containing the marked paper and upload it.</li>
            </div>
        </div>
@@ -239,17 +239,17 @@
                <li>The teacher drops a file at http://localhost:8081/, accessed via the command mvn tomcat7:run.</li>
                <p class="mb-4"></p>
                <b>2. Web Interface:</b>
-               <li>The teacher accesses the web interface at http://localhost:8080/, which serves the index.jsp page.
+               <li>The teacher accesses the web interface at http://localhost:8081/, which serves the index.jsp page.
                </li>
                <p class="mb-4"></p>
                <b>3. Processing the File:</b>
                <li>File Submission: The file gets submitted to a servlet.</li>
-               <li>Google Vision API: The servlet sends the file to the Google Vision API for processing.</li>
-               <li>Result Interpretation: Google Vision API processes the file and returns results, such as a student's
-                   name and grade (e.g., "Greogary Lauder, Grade: 99%").</li>
+               <li>OpenAI GPT-4o: The servlet checks that the file is an image and sends it to OpenAI's GPT-4o model.</li>
+               <li>Result Interpretation: GPT-4o reads the image and returns the student's name, grade, course code,
+                   and topic (e.g., "Gregory Lauder, 98%, SPH3U, Kinematics").</li>
                <p class="mb-4"></p>
                <b>4. Displaying Results:</b>
-               <li>Update Table: The servlet adds the results to a table.</li>
+               <li>Results Page: The servlet sends the results to the results page, which shows them in a table.</li>
                <li>Send Back to Web Interface: The updated table with the student's grades is sent back to the
                    teacher's web pages.</li>
            </div>
@@ -269,62 +269,16 @@
                <p class="mb-4"></p>
                <li><b>Course Code: </b> ICS3U-03</li>
                <p class="mb-4"></p>
-               <li><b>Date of Creation: </b> 5/12/2024</li>
+               <li><b>Built: </b> March to June 2024</li>
                <p class="mb-4"></p>
                <li><b>Project Description: </b> This project automates the grading process by accepting scanned grading
-                   files, interpreting the grades using the Google Vision API, and displaying the results in a
+                   files, interpreting the grades using OpenAI's GPT-4o model, and displaying the results in a
                    user-friendly web interface.</li>
-               <p class="mb-4"></p>
-               <li><b>License: </b> Certified under the Lauders License.</li>
            </div>
        </div>
 
 
-       <!--Program Statistics-->
-       <div class="stats shadow grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-xl shadow-custom">
-           <div class="stat">
-               <div class="stat-figure text-secondary">
-                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                       class="inline-block w-8 h-8 stroke-current">
-                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                           d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                   </svg>
-               </div>
-               <div class="stat-title">Downloads</div>
-               <div class="stat-value">31K</div>
-               <div class="stat-desc">Jan 1st - Feb 1st</div>
-           </div>
-
-
-           <div class="stat">
-               <div class="stat-figure text-secondary">
-                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                       class="inline-block w-8 h-8 stroke-current">
-                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                           d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
-                       </path>
-                   </svg>
-               </div>
-               <div class="stat-title">New Users</div>
-               <div class="stat-value">4,200</div>
-               <div class="stat-desc">(22%)</div>
-           </div>
-
-
-           <div class="stat">
-               <div class="stat-figure text-secondary">
-                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                       class="inline-block w-8 h-8 stroke-current">
-                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                           d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4">
-                       </path>
-                   </svg>
-               </div>
-               <div class="stat-title">New Registers</div>
-               <div class="stat-value">1,200</div>
-               <div class="stat-desc">(14%)</div>
-           </div>
-       </div>
+       
    </div>
 </body>
 
